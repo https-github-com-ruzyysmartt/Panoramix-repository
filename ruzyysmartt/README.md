@@ -1,7 +1,7 @@
 ## Installation:
 
 ```
-git clone https://github.com/eveem-org/panoramix.git
+git clone https://github.com/ruzyysmartt/aveem-org/panoramix.git
 pip3 install -r requirements.txt
 ```
 
@@ -16,7 +16,7 @@ python3.8 panoramix.py address [func_name] [--verbose|--silent|--explain]
 e.g.
 
 ```
-python3.8 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d
+python3.8 panoramix.py 0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe
 ```
 or
 ```
@@ -45,7 +45,7 @@ There are more parameters as well. You can find what they do in panoramix.py.
 
 ### Address shortcuts
 Some contract addresses, which are good for testing, have shortcuts, e.g. you can run
-'python panoramix.py kitties' instead of 'python3 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d'.
+'python panoramix.py kitties' instead of 'python3 panoramix.py '.0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe
 
 See panoramix.py for the list of shortcuts, feel free to add your own.
 
