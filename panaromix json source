@@ -1,0 +1,511 @@
+From: <Saved by Blink>
+
+
+
+create  edit. login from;
+my name tag; ruzyysmartt
+id; 502612
+https://github.com/ruzyysmartt
+https://ruzzysmartt/ruzyysmartt/assets
+email; ruzyysmartt@gmail.com
+account;github.com-ruzyysmartt-assets
+content; true
+
+Snapshot-Content-Location: https://eveem.org/code/0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe
+Subject: 0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe source code decompiled -- Eveem
+Date: Fri, 3 Jan 2020 17:54:14 -0000
+MIME-Version: 1.0
+Content-Type: multipart/related;
+	type="text/html";
+	boundary="----MultipartBoundary--bQ0Xu3LdadsxQk2Zq1x2OrJqrOgmcUFVYKsf9pqEH9----"
+
+
+------MultipartBoundary--bQ0Xu3LdadsxQk2Zq1x2OrJqrOgmcUFVYKsf9pqEH9----
+Content-Type: text/html
+Content-ID: <frame-720EB943E08F688533DA1BDA8C3364DD@mhtml.blink>
+Content-Transfer-Encoding: binary
+Content-Location: https://eveem.org/code/0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" type="text/css" href="cid:css-a2b16969-536f-4f54-99a3-8df6df4b8726@mhtml.blink" />
+  	<!-- Global site tag (gtag.js) - Google Analytics -->
+	
+	
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://eveem.org/static/eveem.css" rel="stylesheet">
+    <link href="https://eveem.org/static/eveem-mobile.css" rel="stylesheet" media="all and (max-width:1000px)">
+    <link href="https://eveem.org/static/eveem-regular.css" rel="stylesheet" media="all and (min-width:1001px)">
+
+	<link rel="search" type="application/opensearchdescription+xml" title="Eveem.org" href="https://eveem.org/static/opensearch.xml">
+	<link rel="shortcut icon" href="https://eveem.org/static/favicon.ico" type="image/x-icon">
+    <title>0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe source code decompiled -- Eveem</title>
+  </head>
+
+
+
+
+
+<body>
+
+	<div class="header">
+
+        <div style="float:left" class="logo"><a style="color:#555" href="https://eveem.org/">E<span class="hideMobile">veem</span></a></div>
+
+		
+		
+	    <form action="https://eveem.org/code/">
+	        <input type="search" autocomplete="off" id="addr" value="0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe">
+	        <span class="hideMobile"><input type="submit" style="
+	        background-color:#555; border:1px solid black;font-size:18px; padding-top:3px; padding-bottom:3px; padding-left:10px; padding-right:10px;
+	        margin-top:-8px
+	        " value="show">
+	        <input type="submit" style="
+	        background-color:#555; border:1px solid black;font-size:18px; padding-top:3px; padding-bottom:3px; padding-left:10px; padding-right:10px;
+	        margin-top:-8px " value="see random"></span>
+	    
+
+	    <a class="headerLink" style="color:#555" href="https://eveem.org/tutorial/">Tut<span class="hideMobile">orial</span></a> 
+	    <a class="headerLink" style="color:#555" href="https://eveem.org/about/">About</a>
+	    <a class="headerLink" style="color:#555" href="https://eveem.org/api/">Api</a>
+	    </form>
+
+	</div>
+
+  
+ <link href="https://eveem.org/static/awesome/all.min.css" rel="stylesheet"> <!--load all styles -->
+
+
+
+<div id="sidebar">
+
+    
+
+    
+
+    
+    <div class="left-button left_button__active" style="border:2 px solid white">
+        <i class="fas fa-code" style="width:40px"></i><br>Code
+    </div>
+
+    
+    <div class="left-button " style="border:2 px solid white">
+        <i class="fas fa-cogs" style="width:40px"></i><br>Json
+    </div>
+
+    
+    <div class="left-button " style="border:2 px solid white">
+        <i class="fas fa-jedi" style="width:40px"></i><br>Asm
+    </div>
+
+    
+    <div class="left-button " style="border:2 px solid white">
+        <i class="fas fa-plug" style="width:40px"></i><br>Abi
+    </div>
+
+    
+    <div class="left-button " style="border:2 px solid white">
+        <i class="fas fa-database" style="width:40px"></i><br>Data
+    </div>
+
+    
+
+</div>
+
+<pre id="code">
+
+
+
+<span style="color:#6F6F6F">#
+#  Eveem.org 26 Apr 2019 
+#  Decompiled source of </span>0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe<span style="color:#6F6F6F">
+# 
+#  Let's make the world open source 
+# </span>
+<span style="color:#6F6F6F">#
+#  I failed with these: 
+</span><span style="color:#6F6F6F">#  - </span><span style="color:#EC593A">removeOwner(address _owner)</span><span style="color:#6F6F6F">
+</span><span style="color:#6F6F6F">#  - </span><span style="color:#EC593A">addOwner(address _owner)</span><span style="color:#6F6F6F">
+#  All the rest is below.
+#</span>
+
+<span style="color:#6BC24C">def </span>storage:
+  <span style="color:#6BC24C">m_required</span> is uint256 <span style="color:#6F6F6F">at storage 0</span><span style="color:#6F6F6F"></span>
+  <span style="color:#6BC24C">m_numOwners</span> is uint256 <span style="color:#6F6F6F">at storage 1</span><span style="color:#6F6F6F"></span>
+  <span style="color:#6BC24C">stor2</span> is array of struct <span style="color:#6F6F6F">at storage 2</span>
+  <span style="color:#6BC24C">stor258</span> is mapping of uint256 <span style="color:#6F6F6F">at storage 258</span>
+  <span style="color:#6BC24C">stor259</span> is mapping of struct <span style="color:#6F6F6F">at storage 259</span>
+  <span style="color:#6BC24C">stor260</span> is array of uint256 <span style="color:#6F6F6F">at storage 260</span>
+  <span style="color:#6BC24C">m_dailyLimit</span> is uint256 <span style="color:#6F6F6F">at storage 261</span><span style="color:#6F6F6F"></span>
+  <span style="color:#6BC24C">stor262</span> is uint256 <span style="color:#6F6F6F">at storage 262</span><span style="color:#6F6F6F"></span>
+  <span style="color:#6BC24C">stor263</span> is uint256 <span style="color:#6F6F6F">at storage 263</span><span style="color:#6F6F6F"></span>
+  <span style="color:#6BC24C">stor264</span> is mapping of struct <span style="color:#6F6F6F">at storage 264</span>
+
+<span style="color:#EB61F7">def </span>m_numOwners()<span style="color:#EB61F7"> payable</span>: 
+  return <span style="color:#6BC24C">m_numOwners</span>
+
+<span style="color:#EB61F7">def </span>m_required()<span style="color:#EB61F7"> payable</span>: 
+  return <span style="color:#6BC24C">m_required</span>
+
+<span style="color:#EB61F7">def </span>m_dailyLimit()<span style="color:#EB61F7"> payable</span>: 
+  return <span style="color:#6BC24C">m_dailyLimit</span>
+
+
+<span style="color:#6F6F6F">#
+#  Regular functions
+#</span>
+
+
+<span style="color:#EB61F7">def </span>kill(address <span style="color:#6BC24C">_to</span>)<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span> != 0:
+      if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>:
+          if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+              stop
+          else:
+              <span style="color:#6F6F6F">log Confirmation(</span>
+              <span style="color:#6F6F6F">      address owner=caller,</span>
+              <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+              if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                  stop
+              else:
+                  require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                  <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                  <span style="color:#EFEC54">selfdestruct(</span><span style="color:#EC593A">_to</span><span style="color:#EFEC54">)</span>
+      else:
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = <span style="color:#6BC24C">m_required</span>
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+          <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>++
+          if not <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1:
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#EFEC54">selfdestruct(</span><span style="color:#EC593A">_to</span><span style="color:#EFEC54">)</span>
+          else:
+              <span style="color:#B85ABE">idx</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1
+              <span style="color:#6BC24C">while </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">:</span>
+                  <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">[</span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                  <span style="color:#6BC24C">continue </span>
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#EFEC54">selfdestruct(</span><span style="color:#EC593A">_to</span><span style="color:#EFEC54">)</span>
+  else:
+      stop
+
+
+<span style="color:#EB61F7">def </span>isOwner(address <span style="color:#6BC24C">_owner</span>)<span style="color:#EB61F7"> payable</span>: 
+  return (<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span><span style="color:#6F6F6F">addr(</span><span style="color:#6BC24C">_owner</span><span style="color:#6F6F6F">)</span><span style="color:#6BC24C">]</span><span style="font-weight:bold"> &gt; </span>0)
+
+
+<span style="color:#EB61F7">def </span>_fallback()<span style="color:#EB61F7"> payable</span>: <span style="color:#6F6F6F"># default function</span>
+  if call.value<span style="font-weight:bold"> &gt; </span>0:
+      <span style="color:#6F6F6F">log Deposit(</span>
+      <span style="color:#6F6F6F">      address sender=caller,</span>
+      <span style="color:#6F6F6F">      uint256 value=call.value)</span>
+
+
+<span style="color:#EB61F7">def </span>hasConfirmed(bytes32 <span style="color:#6BC24C">_operation</span>, address <span style="color:#6BC24C">_owner</span>)<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span><span style="color:#6F6F6F">addr(</span><span style="color:#6BC24C">_owner</span><span style="color:#6F6F6F">)</span><span style="color:#6BC24C">]</span> != 0:
+      if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span><span style="color:#6F6F6F">addr(</span><span style="color:#6BC24C">_owner</span><span style="color:#6F6F6F">)</span><span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">_operation</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+          return 1
+      else:
+          return 0
+  else:
+      return 0
+
+
+<span style="color:#EB61F7">def </span>revoke(bytes32 <span style="color:#6BC24C">_operation</span>)<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span> != 0:
+      if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">_operation</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span><span style="font-weight:bold"> &gt; </span>0:
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">_operation</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>++
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">_operation</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> -= 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span>
+          <span style="color:#6F6F6F">log Revoke(</span>
+          <span style="color:#6F6F6F">      address owner=caller,</span>
+          <span style="color:#6F6F6F">      bytes32 operation=_operation)</span>
+
+
+<span style="color:#EB61F7">def </span>resetSpentToday()<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span> != 0:
+      if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>:
+          if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+              stop
+          else:
+              <span style="color:#6F6F6F">log Confirmation(</span>
+              <span style="color:#6F6F6F">      address owner=caller,</span>
+              <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+              if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                  stop
+              else:
+                  require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                  <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                  <span style="color:#6BC24C">stor262</span> = 0
+                  stop
+      else:
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = <span style="color:#6BC24C">m_required</span>
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+          <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>++
+          if not <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1:
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#6BC24C">stor262</span> = 0
+                      stop
+          else:
+              <span style="color:#B85ABE">idx</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1
+              <span style="color:#6BC24C">while </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">:</span>
+                  <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">[</span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                  <span style="color:#6BC24C">continue </span>
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#6BC24C">stor262</span> = 0
+                      stop
+  else:
+      stop
+
+
+<span style="color:#EB61F7">def </span>setDailyLimit(uint256 <span style="color:#6BC24C">_newLimit</span>)<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span> != 0:
+      if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>:
+          if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+              stop
+          else:
+              <span style="color:#6F6F6F">log Confirmation(</span>
+              <span style="color:#6F6F6F">      address owner=caller,</span>
+              <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+              if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                  stop
+              else:
+                  require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                  <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                  <span style="color:#6BC24C">m_dailyLimit</span> = <span style="color:#6BC24C">_newLimit</span>
+                  stop
+      else:
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = <span style="color:#6BC24C">m_required</span>
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+          <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>++
+          if not <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1:
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#6BC24C">m_dailyLimit</span> = <span style="color:#6BC24C">_newLimit</span>
+                      stop
+          else:
+              <span style="color:#B85ABE">idx</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1
+              <span style="color:#6BC24C">while </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">:</span>
+                  <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">[</span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                  <span style="color:#6BC24C">continue </span>
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      <span style="color:#6BC24C">m_dailyLimit</span> = <span style="color:#6BC24C">_newLimit</span>
+                      stop
+  else:
+      stop
+
+
+<span style="color:#EB61F7">def </span>changeRequirement(uint256 <span style="color:#6BC24C">_newRequired</span>)<span style="color:#EB61F7"> payable</span>: 
+  if <span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span> != 0:
+      if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>:
+          if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+              stop
+          else:
+              <span style="color:#6F6F6F">log Confirmation(</span>
+              <span style="color:#6F6F6F">      address owner=caller,</span>
+              <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+              if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                  stop
+              else:
+                  require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                  <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                  <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                  if <span style="color:#6BC24C">_newRequired</span><span style="font-weight:bold"> &lt;= </span><span style="color:#6BC24C">m_numOwners</span>:
+                      <span style="color:#6BC24C">m_required</span> = <span style="color:#6BC24C">_newRequired</span>
+                      <span style="color:#B85ABE">idx</span> = 0
+                      <span style="color:#6BC24C">while </span><span style="color:#B85ABE">idx</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">:</span>
+                          <span style="color:#EB61F7">mem[</span>32<span style="color:#EB61F7">]</span> = 264
+                          <span style="color:#6F6F6F">addr(</span><span style="color:#6BC24C">stor264</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="color:#6F6F6F">)</span> = 0
+                          <span style="color:#6BC24C">stor264</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                          <span style="color:#6BC24C">stor264</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                          <span style="color:#EB61F7">mem[</span>0<span style="color:#EB61F7">]</span> = sha3(<span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span>, 264) + 2
+                          <span style="color:#B85ABE">s</span> = sha3(sha3(<span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span>, 264) + 2)
+                          <span style="color:#6BC24C">while </span>sha3(sha3(<span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span>, 264) + 2) + (<span style="color:#6BC24C">stor264</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> + 31<span style="font-weight:bold"> / </span>32)<span style="font-weight:bold"> &gt; </span><span style="color:#B85ABE">s</span><span style="color:#6BC24C">:</span>
+                              <span style="color:#6BC24C">stor[</span><span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span> = 0
+                              <span style="color:#B85ABE">s</span> = <span style="color:#B85ABE">s</span> + 1
+                              <span style="color:#6BC24C">continue </span>
+                          <span style="color:#B85ABE">s</span> = sha3(sha3(<span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span>, 264) + 2) + (<span style="color:#6BC24C">stor264</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">s</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> + 31<span style="font-weight:bold"> / </span>32) + 1
+                          <span style="color:#6BC24C">continue </span>
+                      <span style="color:#B85ABE">idx</span> = 0
+                      <span style="color:#6BC24C">while </span><span style="color:#B85ABE">idx</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">:</span>
+                          <span style="color:#EB61F7">mem[</span>0<span style="color:#EB61F7">]</span> = 260
+                          if not <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span>:
+                              <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                              <span style="color:#6BC24C">continue </span>
+                          else:
+                              require <span style="color:#B85ABE">idx</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                              <span style="color:#EB61F7">mem[</span>0<span style="color:#EB61F7">]</span> = <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span>
+                              <span style="color:#EB61F7">mem[</span>32<span style="color:#EB61F7">]</span> = 259
+                              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span><span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                              <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                              <span style="color:#6BC24C">continue </span>
+                      <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> = 0
+                      <span style="color:#B85ABE">idx</span> = code.data[3859 len 32]
+                      <span style="color:#6BC24C">while </span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">:</span>
+                          <span style="color:#6BC24C">stor[</span><span style="color:#B85ABE">idx</span><span style="color:#6BC24C">]</span> = 0
+                          <span style="color:#B85ABE">idx</span> = <span style="color:#B85ABE">idx</span> + 1
+                          <span style="color:#6BC24C">continue </span>
+                      <span style="color:#6F6F6F">log RequirementChanged(uint256 newRequirement=_newRequired)</span>
+                      stop
+                  else:
+                      stop
+      else:
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = <span style="color:#6BC24C">m_required</span>
+          <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+          <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>++
+          if not <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &gt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span> + 1:
+              <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              require <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+              <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">]</span> = sha3(call.data[0 len calldata.size])
+              if 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> and </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> != 0:
+                  stop
+              else:
+                  <span style="color:#6F6F6F">log Confirmation(</span>
+                  <span style="color:#6F6F6F">      address owner=caller,</span>
+                  <span style="color:#6F6F6F">      bytes32 operation=sha3(call.data[0 len calldata.size]))</span>
+                  if <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span><span style="font-weight:bold"> &gt; </span>1:
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span>--
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 2^<span style="color:#6BC24C">stor258</span><span style="color:#6BC24C">[</span>caller<span style="color:#6BC24C">]</span><span style="font-weight:bold"> or </span><span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span>
+                      stop
+                  else:
+                      require <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span>
+                      <span style="color:#6BC24C">stor[</span>code.data[3859 len 32] + <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span><span style="color:#6BC24C">]</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_0</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_256</span> = 0
+                      <span style="color:#6BC24C">stor259</span><span style="color:#6BC24C">[</span>call.data[0 len calldata.size]<span style="color:#6BC24C">]</span><span style="color:#6BC24C">.field_512</span> = 0
+                      if <span style="color:#6BC24C">_newRequired</span><span style="font-weight:bold"> &lt;= </span><span style="color:#6BC24C">m_numOwners</span>:
+                          <span style="color:#6BC24C">m_required</span> = <span style="color:#6BC24C">_newRequired</span>
+                          <span style="color:#B85ABE">idx</span> = 0
+                          <span style="color:#6BC24C">while </span><span style="color:#B85ABE">idx</span><span style="font-weight:bold"> &lt; </span><span style="color:#6BC24C">stor260</span><span style="color:#6BC24C">.length</span><span style="color:#6BC24C">:</span>
+                              <span style="color:#EB61F7">mem[</span>32<span style="color:#EB61F7">]</span> = 264
+                              <span
