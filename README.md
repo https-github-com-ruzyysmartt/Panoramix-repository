@@ -1,11 +1,11 @@
 ## Installation:
 
 ```
-git clone https://github.com/eveem-org/panoramix.git
+git clone https://github.com/ruzyysmartt/aveem-org/panoramix.git
 pip3 install -r requirements.txt
 ```
 
-## Running:
+## Running:npm yml
 
 You *need* **python3.8** to run Panoramix. Yes, there was no way around it.
 
@@ -13,13 +13,13 @@ You *need* **python3.8** to run Panoramix. Yes, there was no way around it.
 python3.8 panoramix.py address [func_name] [--verbose|--silent|--explain]
 ```
 
-e.g.
+e.g.:https/github.com/ruzyysmartt/panoramix
 
 ```
-python3.8 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d
-```
-or
-```
+python3.8 panoramix.py 1)0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2
+```.                   2)0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+or.                    3)0x8018280076d7fA2cAa1147e441352E8a89e1DDbe
+```                    4)0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe
 python3.8 panoramix.py kitties
 ```
 
