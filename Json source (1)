@@ -1,0 +1,157 @@
+E
+
+0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+TutAboutApi
+
+Code
+
+Json
+
+Asm
+
+Abi
+
+Data
+
+
+
+#
+#  Eveem.org 26 Apr 2019 
+#  Decompiled source of 0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+# 
+#  Let's make the world open source 
+# 
+
+def storage:
+  stor0 is uint256 at storage 0
+
+def _fallback() payable: # default function
+  if not calldata.size:
+      if call.value > 0:
+          log Received(
+                uint256 value=Array(len=calldata.size, data=call.data[0 len calldata.size]),
+                address sender=call.value,
+                bytes data=caller)
+          stop
+  delegate stor0 with:
+     funct call.data[0 len 4]
+       gas gas_remaining wei
+      args call.data[4 len calldata.size - 4]
+  if not delegate.return_code:
+      revert with ext_call.return_data[0 len return_data.size]
+  return ext_call.return_data[0 len return_data.size]
+E
+
+0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+TutAboutApi
+
+Code
+
+Json
+
+Asm
+
+Abi
+
+Data
+
+
+
+#
+#  Eveem.org 26 Apr 2019 
+#  Decompiled source of 0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+# 
+#  Let's make the world open source 
+# 
+
+def storage:
+  stor0 is uint256 at storage 0
+
+def _fallback() payable: # default function
+  if not calldata.size:
+      if call.value > 0:
+          log Received(
+                uint256 value=Array(len=calldata.size, data=call.data[0 len calldata.size]),
+                address sender=call.value,
+                bytes data=caller)
+          stop
+  delegate stor0 with:
+     funct call.data[0 len 4]
+       gas gas_remaining wei
+      args call.data[4 len calldata.size - 4]
+  if not delegate.return_code:
+      revert with ext_call.return_data[0 len return_data.size]
+  return ext_call.return_data[0 len return_data.size]
+E
+
+0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+TutAboutApi
+
+Code
+
+Json
+
+Asm
+
+Abi
+
+Data
+
+
+
+#
+#  Eveem.org 26 Apr 2019 
+#  Decompiled source of 0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+# 
+#  Let's make the world open source 
+# 
+
+def storage:
+  stor0 is uint256 at storage 0
+
+def _fallback() payable: # default function
+  if not calldata.size:
+      if call.value > 0:
+          log Received(
+                uint256 value=Array(len=calldata.size, data=call.data[0 len calldata.size]),
+                address sender=call.value,
+                bytes data=caller)
+          stop
+  delegate stor0 with:
+     funct call.data[0 len 4]
+       gas gas_remaining wei
+      args call.data[4 len calldata.size - 4]
+  if not delegate.return_code:
+      revert with ext_call.return_data[0 len return_data.size]
+  return ext_call.return_data[0 len return_data.size]
+E
+
+0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+TutAboutApi
+
+Code
+
+Json
+
+Asm
+
+Abi
+
+Data
+
+
+
+
+Experimental auto-generated ABI
+addr: 0x62991A1B4187481C8B5BB49Fa567711e09fF488D
+network: mainnet
+
+Please note:
+- function parameter names may be off
+
+[
+    {
+        "type": "fallback",
+        "stateMutability": "payable"
+    }
+]
