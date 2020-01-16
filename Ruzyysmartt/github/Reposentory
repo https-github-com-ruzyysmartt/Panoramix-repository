@@ -1,0 +1,100 @@
+https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commits/198ab1627b2de6d08aa5ce53745f30c8755ceae2",
+      "https://api.github.com/repositories/233572960/commits/35276da22eddafbedfd68c625ab2dce1c33312e2
+4https://api.github.com/repositories/233572960/commits/35276da22eddafbedfd68c625ab2dce1c33312e2 {
+  "sha": "35276da22eddafbedfd68c625ab2dce1c33312e2",
+  "node_id": "MDY6Q29tbWl0MjMzNTcyOTYwOjM1Mjc2ZGEyMmVkZGFmYmVkZmQ2OGM2MjVhYjJkY2UxYzMzMzEyZTI=",
+  "commit": {
+    "author": {
+      "name": "ruzyysmartt",
+      "email": "ruzyysmartt@gmail.com",
+      "date": "2020-01-16T02:39:26Z"
+    },
+    "committer": {
+      "name": "GitHub",
+      "email": "noreply@github.com",
+      "date": "2020-01-16T02:39:26Z"
+    },
+    "message": "Readme md\n\n## Installation:\r\n\r\n```\r\ngit clone https://github.com/ruzyysmartt/aveem-org/panoramix.git\r\npip3 install -r requirements.txt\r\n```\r\n\r\n## Running:npm yml\r\n\r\nYou *need* **python3.8** to run Panoramix. Yes, there was no way around it.\r\n\r\n```\r\npython3.8 panoramix.py address [func_name] [--verbose|--silent|--explain]\r\n```\r\n\r\ne.g.:https/github.com/ruzyysmartt/panoramix\r\n\r\n```\r\npython3.8 panoramix.py 1)0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\r\n```.                   2)0x62991A1B4187481C8B5BB49Fa567711e09fF488D\r\nor.                    3)0x8018280076d7fA2cAa1147e441352E8a89e1DDbe\r\n```                    4)0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\r\npython3.8 panoramix.py kitties\r\n```\r\n\r\nOutput goes to two places:\r\n- `console`\r\n- ***`cache_pan/`*** directory - .pan, .json, .asm files\r\n\r\nIf you want to see how Panoramix works under the hood, try the `--explain` mode:\r\n\r\n```\r\npython3.8 panoramix.py kitties paused --explain\r\npython3.8 panoramix.py kitties pause --explain\r\npython3.8 panoramix.py kitties tokenMetadata --explain\r\n```\r\n\r\n### Optional parameters:\r\n\r\nfunc_name -- name of the function to decompile (note: storage names won't be discovered in this mode)\r\n--verbose -- prints out the assembly and stack as well as regular functions, a good way to try it out is\r\nby running 'python panoramix.py kitties pause --verbose' - it's a simple function\r\n\r\nThere are more parameters as well. You can find what they do in panoramix.py.\r\n\r\n### Address shortcuts\r\nSome contract addresses, which are good for testing, have shortcuts, e.g. you can run\r\n'python panoramix.py kitties' instead of 'python3 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d'.\r\n\r\nSee panoramix.py for the list of shortcuts, feel free to add your own.\r\n\r\n## Directories & Files\r\n\r\n### Code:\r\n- core - modules for doing abstract/symbolic operations\r\n- pano - the proper decompiler\r\n- utils - various helper modules\r\n- tilde - the library for handling pattern matching in python3.8\r\n\r\n### Data:\r\n- cache_code - cached bytecodes\r\n- cache_pan - cached decompilation outputs\r\n- cache_pabi - cached auto-generated p-abi files\r\n- supplement.db - sqlite3 database of function definitions\r\n- supp2.db - a lightweight variant o the above\r\n\r\nCache directories are split into subdirectories, so the filesystem doesn't break down with large amounts\r\nof cached contracts (important when running bulk_decompile on all 2.2M contracts on the chain)\r\n\r\nAll of the above generated after the first run.\r\n\r\n## Utilities\r\nbulk_decompile.py - batch-decompiles contracts, with multi-processing support\r\nbulk_compare.py - decompiles a set of test contracts, fetches the current decompiled from Eveem, and prepares two files, so you can diff them and see what changes were made\r\n\r\n## Why **python3.8** and **Tilde**\r\nPanoramix uses a ton of pattern matching operations, and python doesn't support those as a language.\r\n\r\nThere are some pattern-matching libraries for older python versions, but none of them seemed good enough.\r\nBecause of that, I built Tilde, which is a language extension adding a new operator.\r\n\r\nTilde replaces '~' pattern matching operator with a series of ':=' operators underneath.\r\nBecause of that, python3.8 is a must.\r\n\r\nBelieve me, I spent a lot of time looking for some other way to make pattern matching readable.\r\nNothing was close to this good.\r\n\r\nBut if you manage to figure out a way to do it without Tilde (and maintain readability), I'll gladly accept a PR :)\r\n\r\n# How Panoramix works\r\n\r\nSee the source code comments, starting with panoramix.py. Also, those slides[tbd].",
+    "tree": {
+      "sha": "2601ed3e027679605ccf53aaa447b78e46029028",
+      "url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/git/trees/2601ed3e027679605ccf53aaa447b78e46029028"
+    },
+    "url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/git/commits/35276da22eddafbedfd68c625ab2dce1c33312e2",
+    "comment_count": 0,
+    "verification": {
+      "verified": true,
+      "reason": "valid",
+      "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJeH8zeCRBK7hj4Ov3rIwAAdHIIADLKKaUtFJu4Y10hj2w5+fB1\n151TO0Ve3hxUUiADgIobpuITtD4OjwAh6xsoFAT+An6EY1W1cLKcd/haBerjvDDK\n6vVP9HcmCC72EpxB8jIx8vUrJDngculxrczzhkv5HqwPOFl9YBihdHo7GgH7A6aB\nVAJ0pZ5+GRPN9ANze70Tu5B++JQKMydGBcZyxBvw2WNV8uaoiUN7VsOfac1aeHnp\ntBMHoi68eNg9nxyKXLUgnzJ2xksdGKguBeFgeIdS46gZK+N/wG3jiDq7BH0h5rdk\nxedxXJ2/x6G8LjzFxfZ1GjtIODc4tDrXhuwDx34DIwek2TE6xxvqBmD49gW/Rws=\n=HXTe\n-----END PGP SIGNATURE-----\n",
+      "payload": "tree 2601ed3e027679605ccf53aaa447b78e46029028\nparent 198ab1627b2de6d08aa5ce53745f30c8755ceae2\nauthor ruzyysmartt <ruzyysmartt@gmail.com> 1579142366 +0000\ncommitter GitHub <noreply@github.com> 1579142366 +0000\n\nReadme md\n\n## Installation:\r\n\r\n```\r\ngit clone https://github.com/ruzyysmartt/aveem-org/panoramix.git\r\npip3 install -r requirements.txt\r\n```\r\n\r\n## Running:npm yml\r\n\r\nYou *need* **python3.8** to run Panoramix. Yes, there was no way around it.\r\n\r\n```\r\npython3.8 panoramix.py address [func_name] [--verbose|--silent|--explain]\r\n```\r\n\r\ne.g.:https/github.com/ruzyysmartt/panoramix\r\n\r\n```\r\npython3.8 panoramix.py 1)0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\r\n```.                   2)0x62991A1B4187481C8B5BB49Fa567711e09fF488D\r\nor.                    3)0x8018280076d7fA2cAa1147e441352E8a89e1DDbe\r\n```                    4)0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\r\npython3.8 panoramix.py kitties\r\n```\r\n\r\nOutput goes to two places:\r\n- `console`\r\n- ***`cache_pan/`*** directory - .pan, .json, .asm files\r\n\r\nIf you want to see how Panoramix works under the hood, try the `--explain` mode:\r\n\r\n```\r\npython3.8 panoramix.py kitties paused --explain\r\npython3.8 panoramix.py kitties pause --explain\r\npython3.8 panoramix.py kitties tokenMetadata --explain\r\n```\r\n\r\n### Optional parameters:\r\n\r\nfunc_name -- name of the function to decompile (note: storage names won't be discovered in this mode)\r\n--verbose -- prints out the assembly and stack as well as regular functions, a good way to try it out is\r\nby running 'python panoramix.py kitties pause --verbose' - it's a simple function\r\n\r\nThere are more parameters as well. You can find what they do in panoramix.py.\r\n\r\n### Address shortcuts\r\nSome contract addresses, which are good for testing, have shortcuts, e.g. you can run\r\n'python panoramix.py kitties' instead of 'python3 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d'.\r\n\r\nSee panoramix.py for the list of shortcuts, feel free to add your own.\r\n\r\n## Directories & Files\r\n\r\n### Code:\r\n- core - modules for doing abstract/symbolic operations\r\n- pano - the proper decompiler\r\n- utils - various helper modules\r\n- tilde - the library for handling pattern matching in python3.8\r\n\r\n### Data:\r\n- cache_code - cached bytecodes\r\n- cache_pan - cached decompilation outputs\r\n- cache_pabi - cached auto-generated p-abi files\r\n- supplement.db - sqlite3 database of function definitions\r\n- supp2.db - a lightweight variant o the above\r\n\r\nCache directories are split into subdirectories, so the filesystem doesn't break down with large amounts\r\nof cached contracts (important when running bulk_decompile on all 2.2M contracts on the chain)\r\n\r\nAll of the above generated after the first run.\r\n\r\n## Utilities\r\nbulk_decompile.py - batch-decompiles contracts, with multi-processing support\r\nbulk_compare.py - decompiles a set of test contracts, fetches the current decompiled from Eveem, and prepares two files, so you can diff them and see what changes were made\r\n\r\n## Why **python3.8** and **Tilde**\r\nPanoramix uses a ton of pattern matching operations, and python doesn't support those as a language.\r\n\r\nThere are some pattern-matching libraries for older python versions, but none of them seemed good enough.\r\nBecause of that, I built Tilde, which is a language extension adding a new operator.\r\n\r\nTilde replaces '~' pattern matching operator with a series of ':=' operators underneath.\r\nBecause of that, python3.8 is a must.\r\n\r\nBelieve me, I spent a lot of time looking for some other way to make pattern matching readable.\r\nNothing was close to this good.\r\n\r\nBut if you manage to figure out a way to do it without Tilde (and maintain readability), I'll gladly accept a PR :)\r\n\r\n# How Panoramix works\r\n\r\nSee the source code comments, starting with panoramix.py. Also, those slides[tbd]."
+    }
+  },
+  "url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commits/35276da22eddafbedfd68c625ab2dce1c33312e2",
+  "html_url": "https://github.com/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commit/35276da22eddafbedfd68c625ab2dce1c33312e2",
+  "comments_url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commits/35276da22eddafbedfd68c625ab2dce1c33312e2/comments",
+  "author": {
+    "login": "ruzyysmartt",
+    "id": 52005723,
+    "node_id": "MDQ6VXNlcjUyMDA1NzIz",
+    "avatar_url": "https://avatars0.githubusercontent.com/u/52005723?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/ruzyysmartt",
+    "html_url": "https://github.com/ruzyysmartt",
+    "followers_url": "https://api.github.com/users/ruzyysmartt/followers",
+    "following_url": "https://api.github.com/users/ruzyysmartt/following{/other_user}",
+    "gists_url": "https://api.github.com/users/ruzyysmartt/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/ruzyysmartt/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/ruzyysmartt/subscriptions",
+    "organizations_url": "https://api.github.com/users/ruzyysmartt/orgs",
+    "repos_url": "https://api.github.com/users/ruzyysmartt/repos",
+    "events_url": "https://api.github.com/users/ruzyysmartt/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/ruzyysmartt/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "committer": {
+    "login": "web-flow",
+    "id": 19864447,
+    "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+    "avatar_url": "https://avatars3.githubusercontent.com/u/19864447?v=4",
+    "gravatar_id": "",
+    "url": "https://api.github.com/users/web-flow",
+    "html_url": "https://github.com/web-flow",
+    "followers_url": "https://api.github.com/users/web-flow/followers",
+    "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+    "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+    "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+    "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+    "organizations_url": "https://api.github.com/users/web-flow/orgs",
+    "repos_url": "https://api.github.com/users/web-flow/repos",
+    "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+    "received_events_url": "https://api.github.com/users/web-flow/received_events",
+    "type": "User",
+    "site_admin": false
+  },
+  "parents": [
+    {
+      "sha": "198ab1627b2de6d08aa5ce53745f30c8755ceae2",
+      "url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commits/198ab1627b2de6d08aa5ce53745f30c8755ceae2",
+      "html_url": "https://github.com/github-com-account-organizations-news/ruzyysmartt-github-panoramix/commit/198ab1627b2de6d08aa5ce53745f30c8755ceae2"
+    }
+  ],
+  "stats": {
+    "total": 94,
+    "additions": 94,
+    "deletions": 0
+  },
+  "files": [
+    {
+      "sha": "d9e01ecd056cd06a81b10ec98f2f2b84accc241a",
+      "filename": "ruzyysmartt/github/README.md",
+      "status": "added",
+      "additions": 94,
+      "deletions": 0,
+      "changes": 94,
+      "blob_url": "https://github.com/github-com-account-organizations-news/ruzyysmartt-github-panoramix/blob/35276da22eddafbedfd68c625ab2dce1c33312e2/ruzyysmartt/github/README.md",
+      "raw_url": "https://github.com/github-com-account-organizations-news/ruzyysmartt-github-panoramix/raw/35276da22eddafbedfd68c625ab2dce1c33312e2/ruzyysmartt/github/README.md",
+      "contents_url": "https://api.github.com/repos/github-com-account-organizations-news/ruzyysmartt-github-panoramix/contents/ruzyysmartt/github/README.md?ref=35276da22eddafbedfd68c625ab2dce1c33312e2",
+      "patch": "@@ -0,0 +1,94 @@\n+# panoramix\n+ruzyysmartt/panoramix decompile\n+## Installation:\n+\n+```\n+git clone https://github.com/ruzyysmartt/aveem-org/panoramix.git\n+pip3 install -r requirements.txt\n+```\n+\n+## Running:npm yml\n+\n+You *need* **python3.8** to run Panoramix. Yes, there was no way around it.\n+\n+```\n+python3.8 panoramix.py address [func_name] [--verbose|--silent|--explain]\n+```\n+\n+e.g.:https/github.com/ruzyysmartt/panoramix\n+\n+```\n+python3.8 panoramix.py 1)0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2\n+```.                   2)0x62991A1B4187481C8B5BB49Fa567711e09fF488D\n+or.                    3)0x8018280076d7fA2cAa1147e441352E8a89e1DDbe\n+```                    4)0xde0B295669a9FD93d5F28D9Ec85E40f4cb697BAe\n+python3.8 panoramix.py kitties\n+```\n+\n+Output goes to two places:\n+- `console`\n+- ***`cache_pan/`*** directory - .pan, .json, .asm files\n+\n+If you want to see how Panoramix works under the hood, try the `--explain` mode:\n+\n+```\n+python3.8 panoramix.py kitties paused --explain\n+python3.8 panoramix.py kitties pause --explain\n+python3.8 panoramix.py kitties tokenMetadata --explain\n+```\n+\n+### Optional parameters:\n+\n+func_name -- name of the function to decompile (note: storage names won't be discovered in this mode)\n+--verbose -- prints out the assembly and stack as well as regular functions, a good way to try it out is\n+by running 'python panoramix.py kitties pause --verbose' - it's a simple function\n+\n+There are more parameters as well. You can find what they do in panoramix.py.\n+\n+### Address shortcuts\n+Some contract addresses, which are good for testing, have shortcuts, e.g. you can run\n+'python panoramix.py kitties' instead of 'python3 panoramix.py 0x06012c8cf97bead5deae237070f9587f8e7a266d'.\n+\n+See panoramix.py for the list of shortcuts, feel free to add your own.\n+\n+## Directories & Files\n+\n+### Code:\n+- core - modules for doing abstract/symbolic operations\n+- pano - the proper decompiler\n+- utils - various helper modules\n+- tilde - the library for handling pattern matching in python3.8\n+\n+### Data:\n+- cache_code - cached bytecodes\n+- cache_pan - cached decompilation outputs\n+- cache_pabi - cached auto-generated p-abi files\n+- supplement.db - sqlite3 database of function definitions\n+- supp2.db - a lightweight variant o the above\n+\n+Cache directories are split into subdirectories, so the filesystem doesn't break down with large amounts\n+of cached contracts (important when running bulk_decompile on all 2.2M contracts on the chain)\n+\n+All of the above generated after the first run.\n+\n+## Utilities\n+bulk_decompile.py - batch-decompiles contracts, with multi-processing support\n+bulk_compare.py - decompiles a set of test contracts, fetches the current decompiled from Eveem, and prepares two files, so you can diff them and see what changes were made\n+\n+## Why **python3.8** and **Tilde**\n+Panoramix uses a ton of pattern matching operations, and python doesn't support those as a language.\n+\n+There are some pattern-matching libraries for older python versions, but none of them seemed good enough.\n+Because of that, I built Tilde, which is a language extension adding a new operator.\n+\n+Tilde replaces '~' pattern matching operator with a series of ':=' operators underneath.\n+Because of that, python3.8 is a must.\n+\n+Believe me, I spent a lot of time looking for some other way to make pattern matching readable.\n+Nothing was close to this good.\n+\n+But if you manage to figure out a way to do it without Tilde (and maintain readability), I'll gladly accept a PR :)\n+\n+# How Panoramix works\n+\n+See the source code comments, starting with panoramix.py. Also, those slides[tbd]."
+    }
+  ]
+}
